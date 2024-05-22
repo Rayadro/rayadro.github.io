@@ -1,0 +1,116 @@
+<!-- N°36 Pedro Valter
+N°37 Rayanne Ferreira -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outra coisa</title>
+
+    <script type="module">
+      let form = document.getElementById("furryE");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let vetor = [];
+        for (let i = 0; i < form.checks.length; i++) {
+          if (form.checks[i].checked) {
+            vetor[i] = form.checks[i].value;
+            console.log(form.checks[i].value);
+          }
+        }
+
+        alert(`
+            Nome: ${form.id_nome.value}
+            Vaga: ${form.radiotudo.value}
+            Habilidades: ${vetor}
+            Cursos: ${form.cursos_textarea.value}
+            `);
+
+        let nome = form.id_nome.value;
+        let vagas = form.elements.radiotudo;
+        let habs = form.checks.checks;
+        let curso = form.value;
+      });
+    </script>
+  </head>
+  <body>
+    <form name="segundo formulario" id="furryE">
+      <fieldset>
+        <legend>Trabalhe Com A Gente</legend>
+        <div>
+          <label for="nome_id"
+            >Nome Completo :
+            <input
+              type="text"
+              name="nome"
+              id="id_nome"
+              required
+              type="module"
+            />
+          </label>
+        </div>
+
+        <div>
+          <p>Vagas Disponíveis:</p>
+          <label for="id_DevFE"
+            >Dev Front-End:
+            <input
+              type="radio"
+              name="radiotudo"
+              value="Dev Front-End"
+              id="devFE_id"
+            />
+          </label>
+
+          <label for="id_Design"
+            >Designer UI/UX:
+            <input
+              type="radio"
+              name="radiotudo"
+              value="Designer UI/UX"
+              id="devUI_id"
+            />
+          </label>
+        </div>
+
+        <p>Habilidades:</p>
+        <label for="id_html"
+          >HTML5:
+          <input type="checkbox" name="checks" value="html" id="html_id" />
+        </label>
+
+        <label for="id_type"
+          >CSS3:
+          <input type="checkbox" name="checks" value="css" id="css_id" />
+        </label>
+
+        <label for="id_js"
+          >Javascript:
+          <input type="checkbox" name="checks" value="js" id="js_id" />
+        </label>
+        <br />
+        <br />
+        <div>
+          <label for="id_textarea"
+            >Cursos:
+            <textarea
+              name="cursos_textarea"
+              id="id_textarea"
+              cols="30"
+              rows="4"
+            ></textarea>
+          </label>
+        </div>
+        <div>
+          <br />
+          <button type="submit">
+            ENVIAR O SEU FORMULÁRIO AGORA IMEDIATAMENTE!!!!!!
+          </button>
+        </div>
+        <br />
+      </fieldset>
+    </form>
+  </body>
+</html>
