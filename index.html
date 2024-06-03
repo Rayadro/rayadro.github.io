@@ -26,6 +26,13 @@ N°37 Rayanne Ferreira -->
         </div>
 
         <div>
+          <label for="id_data"
+            >Data de nascimento:
+            <input type="date" name="data" id="id_data" />
+          </label>
+        </div>
+
+        <div>
           <p>Vagas Disponíveis:</p>
           <label for="id_DevFE"
             >Dev Front-End:
@@ -132,12 +139,14 @@ N°37 Rayanne Ferreira -->
 
       alert(`
             Nome: ${form.id_nome.value}
+            Data: ${form.id_data.value}
             Vaga: ${form.radiotudo.value}
             Habilidades: ${vetor}
             Cursos: ${form.cursos_textarea.value}
             `);
 
       let nome = form.id_nome.value;
+      let data = form.id_data.value;
       let vagas = form.elements.radiotudo;
       let habs = vetor;
       let curso = form.value;
@@ -145,6 +154,7 @@ N°37 Rayanne Ferreira -->
       const usersRef = ref(database, "users");
       push(usersRef, {
         nome: form.id_nome.value,
+        data: form.id_data.value,
         vagas: form.radiotudo.value,
         cursos: form.cursos_textarea.value,
         habilidades: form.checks.value,
